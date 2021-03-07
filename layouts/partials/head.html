@@ -1,0 +1,87 @@
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <base href="{{ .Permalink }}">
+    
+    {{ if eq .Kind "home" }}
+    <meta name="description" content="{{ .Site.Params.Description }}" />
+    {{ end }}
+
+    {{ if ne .Kind "home" }}
+    <meta name="description" content="{{ .Params.description }}" />
+    {{ end }}
+    
+    <meta name="language" content="{{ .Site.Params.DefaultContentLanguage }}">
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="{{ .Site.BaseURL }}sitemap.xml" /> 
+
+    {{ $title := ( .Title ) }}
+    {{ $siteTitle := ( .Site.Title ) }}
+    {{ if .IsHome }}
+    <title>{{ $siteTitle }} {{ if isset .Site.Params "subtitle" }} - {{ .Site.Params.Subtitle }} {{ end }} </title>
+    {{ else }}
+    <title>{{ $title }} :: {{ $siteTitle }}</title>
+    {{ end }}
+
+    <link rel="icon" type="image/png" href={{ .Site.Params.favicon }} />
+
+    {{ template "_internal/opengraph.html" . }}
+    {{ template "_internal/twitter_cards.html" . }}
+
+    <meta name="theme-color" content={{ .Site.Params.browserthemecolor }} />
+
+    {{ range .AlternativeOutputFormats -}}
+    {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
+    {{ end -}}
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,300italic,400italic|Raleway:200,300"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Tangerine&display=swap" rel="stylesheet">    
+
+    
+    {{ $mainjs := resources.Get "js/main.js" | minify | resources.Fingerprint "sha512" }}
+    <script src="{{ $mainjs.Permalink }}" integrity="{{ $mainjs.Data.Integrity }}"></script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/fontawesome.min.css" integrity="sha512-8jdwayz5n8F2cnW26l9vpV6+yGOcRAqz6HTu+DQ3FtVIAts2gTdlFZOGpYhvBMXkWEgxPN3Y22UWyZXuDowNLA==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/regular.min.css" integrity="sha512-qgtcTTDJDk6Fs9eNeN1tnuQwYjhnrJ8wdTVxJpUTkeafKKP6vprqRx5Sj/rB7Q57hoYDbZdtHR4krNZ/11zONg==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/brands.min.css" integrity="sha512-AMDXrE+qaoUHsd0DXQJr5dL4m5xmpkGLxXZQik2TvR2VCVKT/XRPQ4e/LTnwl84mCv+eFm92UG6ErWDtGM/Q5Q==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/solid.min.css" integrity="sha512-QN7X/bUbbeel9bbq6JVNJXk1Zowt+n+QPN+DjhEmTa4TdL1YPCsCey5JrvfRW8xp28LDYgGG/waNVdrhwMQmVQ==" crossorigin="anonymous" />
+    
+    
+    {{ $maincss := resources.Get "css/main.css" | minify | resources.Fingerprint "sha512" }}
+    <link rel="stylesheet" type="text/css" media="screen" href="{{ $maincss.Permalink }}" integrity="{{ $maincss.Data.Integrity }}" />
+    {{ $customcss := resources.Get "css/custom.css" | minify | resources.Fingerprint "sha512" }}
+    <link rel="stylesheet" type="text/css" media="screen" href="{{ $customcss.Permalink }}" integrity="{{ $customcss.Data.Integrity }}" />
+    <!-- Darkmode -->
+    {{ $darkcss := resources.Get "css/dark.css" | minify | resources.Fingerprint "sha512" }}
+    <link rel="stylesheet" type="text/css" href="{{ $darkcss.Permalink }}" media="(prefers-color-scheme: dark)">
+
+
+    {{ $normalizecss := resources.Get "css/normalize.css" | minify | resources.Fingerprint "sha512" }}
+    <link rel="stylesheet" type="text/css" media="screen" href="{{ $normalizecss.Permalink }}" integrity="{{ $normalizecss.Data.Integrity }}" />
+
+
+    <!-- custom JS from posts -->
+    {{if isset .Params "js"}}
+    {{ range $jslink := .Params.js }}
+    <script src="{{ $jslink }}"></script>
+    {{ end }}
+    {{ end }}
+
+    <!-- custom CSS from post -->
+
+    {{if isset .Params "css"}}
+    {{ range $csslink := .Params.css }}
+    <script src="{{ $csslink }}"></script>
+    {{ end }}
+    {{ end }}
+
+    {{ template "_internal/ga.html" . }}
+
+    {{ if .Site.Params.enableAds }}
+    {{ template "_internal/adsense.html" . }}
+    {{ end }}
+
+</head>

@@ -1,0 +1,237 @@
+div.notices {
+    border-radius: 25px;
+    margin: 2rem 0;
+    position: relative;
+}
+
+div.notices>* {
+    /* padding: 10px; */
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-right: 10px;
+    padding-left: 10px;
+
+    display: block;
+    margin-top: 0rem;
+    margin-bottom: 0rem;
+    color: #666;
+}
+
+div.notices>ul {
+    padding-left: 40px;
+}
+
+div.notices pre {
+    background-color: #FAFAFA !important;
+}
+
+/* The notice "header" */
+
+div.notices p:first-child:before {
+    position: absolute;
+    top: 2px;
+    color: #fff;
+    font-family: 'Font Awesome\ 5 Free';
+    font-weight: 900;
+    left: 0.5em;
+}
+
+div.notices.info p:first-child:before {
+    content: "\f05a";
+}
+
+div.notices.note p:first-child:before {
+    content: "\f249";
+}
+
+div.notices.warning p:first-child:before {
+    content: "\f071";
+}
+
+div.notices.tip p:first-child:before {
+    content: "\f058";
+}
+
+/* Style the header text */
+
+div.notices p:first-child:after {
+    position: absolute;
+    top: 2px;
+    color: #fff;
+    left: 2em;
+}
+
+/* header text */
+
+div.notices.info p:first-child:after {
+    content: 'Info';
+}
+
+div.notices.warning p:first-child:after {
+    content: 'Warning';
+}
+
+div.notices.note p:first-child:after {
+    content: 'Note';
+}
+
+div.notices.tip p:first-child:after {
+    content: 'Tip';
+}
+
+/* Give the header a background */
+
+div.notices.warning p:first-child {
+    border-top: 30px solid #d9534fcc;
+    border-radius: 15px;
+}
+
+div.notices.note p:first-child {
+    border-top: 30px solid #6ab0de;
+    border-radius: 15px;
+}
+
+div.notices.tip p:first-child {
+    border-top: 30px solid #5cb85ccc;
+    border-radius: 15px;
+}
+
+div.notices.info p:first-child {
+    border-top: 30px solid #F0B37E;
+    border-radius: 15px;
+}
+
+/* Background colour for the notice body */
+
+div.notices.warning {
+    background: #FAE2E2;
+}
+
+div.notices.note {
+    background: #E7F2FA;
+}
+
+div.notices.tip {
+    background: #E6F9E6;
+}
+
+div.notices.info {
+    background: #FFF2DB;
+}
+
+/* General Tweaks */
+
+.resize {
+    width: auto;
+    text-align: center;
+    padding: 20px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+p code,
+kbd {
+ font-size:.95rem;
+ background:#f7f7f7;
+ padding:.2em
+}
+
+.badge{
+    height: 15px;
+    width: 80px;
+    display: inline-block;
+}
+
+.badge img {
+    display: initial !important;
+    margin: initial !important;
+}
+
+.cursive {
+    font-family: 'Tangerine';
+    font-size: 1.75rem !important;
+}
+
+@media all and (max-device-width: 440px){
+
+    .cursive{
+        font-size: 5.5vw !important;
+    }
+
+}
+
+@media all and (max-device-width: 358px){
+
+    .cursive{
+        font-size: 4.5vw !important;
+    }
+
+}
+
+/* Blinking css */
+
+.blinking-cursor {
+    font-weight: 100;
+    font-size: 30px;
+    color: #2E3D48;
+    -webkit-animation: 1s blink step-end infinite;
+    -moz-animation: 1s blink step-end infinite;
+    -ms-animation: 1s blink step-end infinite;
+    -o-animation: 1s blink step-end infinite;
+    animation: 1s blink step-end infinite;
+}
+
+.site-logo {
+    margin: auto !important;
+    display: inline !important;
+    height: 32px;
+    width: 32px;
+}
+
+@keyframes "blink" {
+    from, to {
+        color: transparent;
+    }
+    50% {
+        color: black;
+    }
+}
+
+@-moz-keyframes blink {
+    from, to {
+        color: transparent;
+    }
+    50% {
+        color: black;
+    }
+}
+
+@-webkit-keyframes "blink" {
+    from, to {
+        color: transparent;
+    }
+    50% {
+        color: black;
+    }
+}
+
+@-ms-keyframes "blink" {
+    from, to {
+        color: transparent;
+    }
+    50% {
+        color: black;
+    }
+}
+
+@-o-keyframes "blink" {
+    from, to {
+        color: transparent;
+    }
+    50% {
+        color: black;
+    }
+}

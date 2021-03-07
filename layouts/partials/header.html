@@ -1,0 +1,35 @@
+<div class="header">
+	<base href="{{ .Site.BaseURL }}">
+	<h1 class="site-title">
+		{{ if isset .Site.Params "logo" }}
+		<img class="site-logo" src="{{ .Site.Params.logo }}" alt="{{.Site.Title}}"> 
+		{{ end }}
+		<a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
+		{{ if .Site.Params.blinkingcursor }}
+		<span class="blinking-cursor">|</span>
+		{{ end }}
+	</h1>
+
+	<div class="site-description">
+		{{ if isset .Site.Params "subtitle" }}
+		<h2 class="cursive">{{ .Site.Params.Subtitle | markdownify }}</h2>
+		{{ end }}
+
+		<nav class="nav social">
+			<ul class="flat">
+				{{ range $index, $key := .Site.Params.Social }}
+				<a href="{{ $key.url }}" title="{{ $key.name }}"><i class="{{ $key.icon }}"></i></a>
+				{{end}}
+			</ul>
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			{{ range .Site.Menus.main }}
+			<li>
+				<a href="{{ .URL }}">{{ .Name }}</a>
+			</li>
+			{{ end }}
+		</ul>
+	</nav>
+</div>

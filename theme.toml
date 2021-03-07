@@ -1,0 +1,22 @@
+# theme.toml template for a Hugo theme
+# See https://github.com/gohugoio/hugoThemes#themetoml for an example
+
+name = "Kavi"
+
+license = "MIT"
+licenselink = "https://github.com/yourname/yourtheme/blob/master/LICENSE"
+description = "ezhil fork that works with hugo >= 0.55"
+homepage = "http://example.com/"
+tags = []
+features = []
+min_version = "0.41.0"
+
+[author]
+  name = "Jagadeesh Kotra"
+  homepage = ""
+
+# If porting an existing theme
+[original]
+  name = "ezhil"
+  homepage = "https://github.com/vividvilla/ezhil"
+  repo = "https://github.com/vividvilla/ezhil"

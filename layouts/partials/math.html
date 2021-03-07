@@ -1,0 +1,6 @@
+{{ if or .Page.Params.math .Site.Params.math }}
+<!-- KaTeX -->
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.css">
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+{{ end }}
