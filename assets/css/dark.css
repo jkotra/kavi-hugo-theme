@@ -76,6 +76,10 @@ p code {
 	background: #1a1717;
 }
 
+div.notices>* {
+    color: #242323;
+}
+
 /* syntax highlighting (monkai) */
 
 /* Background */ .chroma { color: #f8f8f2; background-color: #272822 }
