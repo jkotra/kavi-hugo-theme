@@ -74,10 +74,15 @@ pre code {
 
 p code {
 	background: #1a1717;
+	color: white;
 }
 
 div.notices>* {
     color: #242323;
+}
+
+div.notices pre {
+    background-color: #1b1b1b !important;
 }
 
 /* syntax highlighting (monkai) */
