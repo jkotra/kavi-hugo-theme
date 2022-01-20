@@ -183,18 +183,14 @@ ul {
     margin-bottom: 0;
     margin-top: 0;
     padding: 20px;
-    background-color: transparent !important;
 }
 
-.highlight {
-    background: 0 0;
-    background-color: #FAFAFA;
-}
 
-pre code {
-  display: inline-block;
+* code {
+    display: inline-block;
+    background: #f0f3f3;
+    padding: .2em;
 }
-  
 
 .wrapper {
     max-width: 760px;
@@ -416,10 +412,22 @@ table th, table td {
     }
 }
 
+
+figcaption::before {
+    content: "\f030";
+    font-size: 1rem;
+    margin-right: 0.35rem;
+    color: #d5d5db;
+}
+
 figcaption {
     font-size: 0.95rem;
-    color: #d5d5db
+    font-style: italic;
+    color: #d5d5db;
+    text-align: right;
 }
+
+
 
 /* syntax highlighting (manni) */
 

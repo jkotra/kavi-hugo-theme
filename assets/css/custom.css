@@ -132,13 +132,6 @@ img {
     height: auto;
 }
 
-p code,
-kbd {
- font-size:.95rem;
- background:#f7f7f7;
- padding:.2em
-}
-
 .badge{
     height: 15px;
     width: 80px;

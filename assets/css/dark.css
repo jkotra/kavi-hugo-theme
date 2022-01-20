@@ -68,12 +68,9 @@ table th, table td {
     border: 1px solid #666;
 }
 
-pre code {
-  display: inline-block
-}
-
-p code {
-	background: #1a1717;
+* code {
+	display: inline-block;
+	background: #272822;
 	color: white;
 }
 
