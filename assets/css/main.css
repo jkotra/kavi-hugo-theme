@@ -189,7 +189,8 @@ ul {
 * code {
     display: inline-block;
     background: #f0f3f3;
-    padding: .2em;
+    padding: .15em;
+    border-radius: .25rem;
 }
 
 .wrapper {
@@ -415,13 +416,14 @@ table th, table td {
 
 figcaption::before {
     content: "\f030";
-    font-size: 1rem;
-    margin-right: 0.35rem;
-    color: #d5d5db;
+    font-style: normal;
+    font-family: 'Font Awesome\ 5 Free';
+    font-weight: 900;
+    margin: 0.9rem 0.30rem 0.9rem 0.9rem;
 }
 
 figcaption {
-    font-size: 0.95rem;
+    font-size: 1rem;
     font-style: italic;
     color: #d5d5db;
     text-align: right;

@@ -69,8 +69,10 @@ table th, table td {
 }
 
 * code {
-	display: inline-block;
 	background: #272822;
+}
+
+code {
 	color: white;
 }
 
