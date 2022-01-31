@@ -76,12 +76,50 @@ code {
 	color: white;
 }
 
+/* notices */
+
 div.notices>* {
-    color: #242323;
+    color: #f8f0f0;
 }
 
 div.notices pre {
-    background-color: #1b1b1b !important;
+    background-color: #272822 !important;
+}
+
+div.notices.warning {
+    background: #854545;
+
+}
+div.notices.warning .highlight {
+	background-color: #854545;
+	border-radius: 10px;
+}
+
+div.notices.note {
+    background: #456b83;
+}
+
+div.notices.note .highlight {
+	background-color: #456b83;
+	border-radius: 10px;
+}
+
+div.notices.tip {
+    background: #498549;
+}
+
+div.notices.tip .highlight {
+    background-color: #498549;
+	border-radius: 10px;
+}
+
+div.notices.info{
+    background: #8a714b;
+}
+
+div.notices.info .highlight{
+    background-color: #8a714b;
+	border-radius: 10px;
 }
 
 /* syntax highlighting (monkai) */
@@ -117,7 +155,7 @@ div.notices pre {
 /* NameOther */ .chroma .nx { color: #a6e22e }
 /* NameProperty */ .chroma .py {  }
 /* NameTag */ .chroma .nt { color: #f92672 }
-/* NameVariable */ .chroma .nv {  }
+/* NameVariable */ .chroma .nv { color: turquoise }
 /* NameVariableClass */ .chroma .vc {  }
 /* NameVariableGlobal */ .chroma .vg {  }
 /* NameVariableInstance */ .chroma .vi {  }

@@ -3,9 +3,14 @@
 <div class="post-header">
 	<h1 class="title">{{ .Title }}</h1>
 	{{ if ne .Params.type "page" }}
-	<div class="meta">Posted at &mdash; {{ dateFormat "Jan 2, 2006" .Date }}{{ if .Draft }} <span
-			class="draft-label">DRAFT</span> {{ end }}</div>
+	<div class="meta">Posted at &mdash; {{ dateFormat "Jan 2, 2006" .Date }}
+		{{ if .Draft }} <span
+			class="draft-label">DRAFT</span> {{ end }}
 	{{ end }}
+	{{ if ne .Lastmod .Date  }}
+		| Last Modified at &mdash; {{ dateFormat "Jan 2, 2006" .Lastmod }}</div>
+	{{ end }}		
+
 </div>
 
 <div class="markdown">
