@@ -10,7 +10,7 @@
 	{{ if ne .Lastmod .Date  }}
 		{{ if ne .Params.type "page" }}
 			| Last Modified on &mdash; {{ dateFormat "Jan 2, 2006" .Lastmod }}</div>
-		{{ end }}		
+		{{ end }}
 	{{ end }}
 
 </div>
