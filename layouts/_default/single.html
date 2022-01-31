@@ -8,8 +8,10 @@
 			class="draft-label">DRAFT</span> {{ end }}
 	{{ end }}
 	{{ if ne .Lastmod .Date  }}
-		| Last Modified at &mdash; {{ dateFormat "Jan 2, 2006" .Lastmod }}</div>
-	{{ end }}		
+		{{ if ne .Params.type "page" }}
+			| Last Modified on &mdash; {{ dateFormat "Jan 2, 2006" .Lastmod }}</div>
+		{{ end }}		
+	{{ end }}
 
 </div>
 

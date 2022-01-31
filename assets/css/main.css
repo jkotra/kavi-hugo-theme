@@ -423,7 +423,7 @@ figcaption::before {
 }
 
 figcaption {
-    font-size: 1rem;
+    font-size: 0.85rem;
     font-style: italic;
     color: #d5d5db;
     text-align: right;
