@@ -38,7 +38,7 @@
 {{ if ne .Params.type "page" }}
 <div id="commento"></div>
 
-<script id="comments" src="https://utteranc.es/client.js" repo="{{ .Site.Params.utterances }}" issue-term="pathname"
+<script onload="setCommentsTheme()" id="comments" src="https://utteranc.es/client.js" repo="{{ .Site.Params.utterances }}" issue-term="pathname"
 	label="💬" theme="github-light" crossorigin="anonymous" async>
 	</script>
 
