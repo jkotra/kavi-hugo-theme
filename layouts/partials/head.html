@@ -5,12 +5,15 @@
     <base href="{{ .Permalink }}">
     
     {{ if eq .Kind "home" }}
-    <meta name="description" content="{{ .Site.Params.Description }}" />
+        <meta name="description" content="{{ .Site.Params.Description }}" />
+    {{ else }}
+        {{if isset .Params "description_meta"}}
+            <meta name="description" content="{{ .Params.description_meta }}" />
+        {{ else }}
+            <meta name="description" content="{{ .Params.description }}" />
+        {{ end }}
     {{ end }}
 
-    {{ if ne .Kind "home" }}
-    <meta name="description" content="{{ .Params.description }}" />
-    {{ end }}
     
     <meta name="language" content="{{ .Site.Params.DefaultContentLanguage }}">
     <link rel="sitemap" type="application/xml" title="Sitemap" href="{{ .Site.BaseURL }}sitemap.xml" /> 
@@ -35,9 +38,9 @@
     {{ end -}}
 
     <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,300italic,400italic|Raleway:200,300"
+    <link defer href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,300italic,400italic|Raleway:200,300"
         rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Tangerine&display=swap" rel="stylesheet">    
+    <link defer href="https://fonts.googleapis.com/css2?family=Tangerine&display=swap" rel="stylesheet">    
 
     
     {{ $mainjs := resources.Get "js/main.js" | minify | resources.Fingerprint "sha512" }}
@@ -71,14 +74,13 @@
     {{ end }}
 
     <!-- custom CSS from post -->
-
     {{if isset .Params "css"}}
     {{ range $csslink := .Params.css }}
     <script src="{{ $csslink }}"></script>
     {{ end }}
     {{ end }}
 
-    {{ template "_internal/ga.html" . }}
+    {{ template "_internal/google_analytics_async.html" . }}
 
     {{ if .Site.Params.enableAds }}
     {{ if and (.Site.Params.enableAds) (ne .Params.type "page") (ne .Kind "home") (ne .Kind "taxonomy") (ne .Kind "term")  }}
