@@ -80,7 +80,7 @@
     {{ end }}
     {{ end }}
 
-    {{ template "_internal/google_analytics_async.html" . }}
+    {{ template "_internal/google_analytics.html" . }}
 
     {{ if .Site.Params.enableAds }}
     {{ if and (.Site.Params.enableAds) (ne .Params.type "page") (ne .Kind "home") (ne .Kind "taxonomy") (ne .Kind "term")  }}
