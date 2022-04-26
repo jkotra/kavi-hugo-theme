@@ -129,7 +129,7 @@ div.notices.info .highlight{
 /* Error */ .chroma .err { color: #960050; background-color: #1e0010 }
 /* LineTableTD */ .chroma .lntd { vertical-align: top; padding: 0; margin: 0; border: 0; }
 /* LineTable */ .chroma .lntable { border-spacing: 0; padding: 0; margin: 0; border: 0; width: auto; overflow: auto; display: block; }
-/* LineHighlight */ .chroma .hl { display: block; width: 100%;background-color: #ffffcc }
+/* LineHighlight */ .chroma .hl { display: block; width: 100%;background-color: #172711 }
 /* LineNumbersTable */ .chroma .lnt { margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #7f7f7f }
 /* LineNumbers */ .chroma .ln { margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #7f7f7f }
 /* Keyword */ .chroma .k { color: #66d9ef }
@@ -206,3 +206,42 @@ div.notices.info .highlight{
 /* GenericTraceback */ .chroma .gt {  }
 /* GenericUnderline */ .chroma .gl {  }
 /* TextWhitespace */ .chroma .w {  }
+
+/* clipboard (dark) */
+
+.clipboard-button {
+    position: absolute;
+    right: 0;
+    padding: 6px 5px 6px 5px;
+    margin: 6px;
+    color: #4c4c4c;
+    border-color: #36d86c;
+    background-color: #010101;
+    border: 1px solid;
+    border-radius: 6px;
+    font-size: 1em;
+    z-index: 1;
+    opacity: 0;
+    transition: 0.1s;
+  }
+  .clipboard-button > svg {
+    fill: #ececec;
+  }
+  .clipboard-button:hover {
+    cursor: pointer;
+    border-color: #36d86c;
+    background-color: #010101;
+  }
+  .clipboard-button:hover > svg {
+    fill: #8a8a8a;
+  }
+  .clipboard-button:focus {
+    outline: 0;
+  }
+  .highlight {
+    position: relative;
+  }
+  .highlight:hover > .clipboard-button {
+    opacity: 1;
+    transition: 0.2s;
+  }

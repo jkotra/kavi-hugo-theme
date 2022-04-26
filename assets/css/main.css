@@ -515,3 +515,42 @@ figcaption {
 /* GenericTraceback */ .chroma .gt { color: #99cc66 }
 /* GenericUnderline */ .chroma .gl { text-decoration: underline }
 /* TextWhitespace */ .chroma .w { color: #bbbbbb }
+
+/* clipboard (dark) */
+
+.clipboard-button {
+    position: absolute;
+    right: 0;
+    padding: 6px 5px 6px 5px;
+    margin: 6px;
+    color: #f8f8f8;
+    border-color: #f8f8f8;
+    background-color: #6a6a6a;
+    border: 1px solid;
+    border-radius: 6px;
+    font-size: 1em;
+    z-index: 1;
+    opacity: 0;
+    transition: 0.1s;
+  }
+  .clipboard-button > svg {
+    fill: #f0f0f0;
+  }
+  .clipboard-button:hover {
+    cursor: pointer;
+    border-color: #f8f8f8;
+    background-color: #792fa3;
+  }
+  .clipboard-button:hover > svg {
+    fill: #f4f4f4; /* copy symbol color */
+  }
+  .clipboard-button:focus {
+    outline: 0;
+  }
+  .highlight {
+    position: relative;
+  }
+  .highlight:hover > .clipboard-button {
+    opacity: 1;
+    transition: 0.2s;
+  }

@@ -231,3 +231,7 @@ img {
         color: black;
     }
 }
+
+div.highlight {
+    margin-top: 1em;
+}

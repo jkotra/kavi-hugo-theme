@@ -6,6 +6,9 @@
 			{{ end }}
 			-->
 
+			{{ $clipboardjs := resources.Get "js/clipboard.js" | minify | resources.Fingerprint "sha512" }}
+			<script src="{{ $clipboardjs.Permalink }}" integrity="{{ $clipboardjs.Data.Integrity }}"></script>		
+
 	<nav class="nav">
 		<div class="badge"><a href="https://creativecommons.org/licenses/by-sa/4.0/"><img src="/cc/by-sa.png"></a></div>
 		<div>{{ with .Site.Copyright }} {{ . }} | {{ end }} <a href="https://github.com/jkotra/kavi-hugo-theme">Kavi</a> (based on <a href="https://github.com/vividvilla/ezhil">ezhil</a>)</a> | Built with <a href="https://gohugo.io">Hugo</a></div>
