@@ -6,13 +6,21 @@ const svgCheck =
 const addCopyButtons = (clipboard) => {
     // 1. Look for pre > code elements in the DOM
     document.querySelectorAll("pre > code").forEach((codeBlock) => {
+
+      let buffer = "";
+      codeBlock.querySelectorAll(".line > .cl").forEach((codeLine) => {
+        buffer += codeLine.outerText
+      })
+
+      // console.log(buffer);
+
       // 2. Create a button that will trigger a copy operation
       const button = document.createElement("button");
       button.className = "clipboard-button";
       button.type = "button";
       button.innerHTML = svgCopy;
       button.addEventListener("click", () => {
-        clipboard.writeText(codeBlock.innerText).then(
+        clipboard.writeText(buffer).then(
           () => {
             button.blur();
             button.innerHTML = svgCheck;
