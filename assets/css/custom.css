@@ -187,6 +187,11 @@ img {
     width: 32px;
 }
 
+/* make code line numbers unselectable */
+span[class=ln] {
+    user-select: none;
+}
+
 @keyframes "blink" {
     from, to {
         color: transparent;
