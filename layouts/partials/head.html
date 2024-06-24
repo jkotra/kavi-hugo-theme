@@ -83,7 +83,7 @@
     {{ template "_internal/google_analytics.html" . }}
 
     {{ if .Site.Params.enableAds }}
-    {{ if and (.Site.Params.enableAds) (ne .Params.type "page") (ne .Kind "home") (ne .Kind "taxonomy") (ne .Kind "term")  }}
+    {{ if and (.Site.Params.enableAds) (ne .Kind "home") (ne .Kind "taxonomy") (ne .Kind "term")  }}
     {{ template "_internal/adsense.html" . }}
     {{ end }}
     {{ end }}
