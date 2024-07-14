@@ -1,3 +1,7 @@
+:root {
+    --primary: rgb(54, 216, 108);
+}
+
 body {
 	color: #ddd;
 	background-color: rgb(0, 0, 0);
@@ -26,7 +30,7 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 a,a:hover {
-	color: rgb(54, 216, 108); /* my second most favourite color, suits dark theme */
+	color: var(--primary); /* my second most favourite color, suits dark theme */
 	text-decoration: none;
 }
 
@@ -215,7 +219,7 @@ div.notices.info .highlight{
     padding: 6px 5px 6px 5px;
     margin: 6px;
     color: #4c4c4c;
-    border-color: #36d86c;
+    border-color: var(--primary);
     background-color: #010101;
     border: 1px solid;
     border-radius: 6px;

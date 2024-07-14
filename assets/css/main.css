@@ -1,3 +1,7 @@
+:root {
+    --primary: rgb(121, 47, 163);
+}
+
 body {
     font-family: "ubuntu", sans-serif;
     font-weight: 400;
@@ -66,7 +70,7 @@ blockquote {
     font-size: 1.0rem;
     font-family: Georgia, serif;
     border-left: 3px solid;
-    border-color: rgb(121, 47, 163);
+    border-color: var(--primary);
     padding-left: 20px;
 }
 
@@ -80,7 +84,7 @@ blockquote em {
 }
 
 a,a:hover {
-    color: rgb(121, 47, 163); /* most important color of theme */
+    color: var(--primary); /* most important color of theme */
     text-decoration: none
 }
 
@@ -313,10 +317,10 @@ ul {
 
 .post-tags .tags a {
     display: inline-block;
-    border: 1px solid rgb(121, 47, 163);
+    border: 1px solid var(--primary);
     border-radius: 4px;
     padding: 0px 6px;
-    color: rgb(121, 47, 163);
+    color: var(--primary);
     line-height: 20px;
     font-size: 12px;
     text-decoration: none;
