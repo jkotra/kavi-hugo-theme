@@ -14,6 +14,8 @@ const addCopyButtons = (clipboard) => {
       // 2. Create a button that will trigger a copy operation
       const button = document.createElement("button");
       button.className = "clipboard-button";
+      button.ariaLabel = "Copy";
+      button.title = "Copy";
       button.type = "button";
       button.innerHTML = svgCopy;
       button.addEventListener("click", () => {
