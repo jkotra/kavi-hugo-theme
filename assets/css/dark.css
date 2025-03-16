@@ -158,7 +158,11 @@ div.notices.info .highlight{
 /* KeywordType */ .chroma .kt { color: #66d9ef }
 /* Name */ .chroma .n {  }
 /* NameAttribute */ .chroma .na { color: #a6e22e }
-/* NameBuiltin */ .chroma .nb {  }
+/* NameBuiltin */ .chroma  .nb { }
+
+/* custom rules */
+.chroma .language-rs .nb { color: white !important; }
+
 /* NameBuiltinPseudo */ .chroma .bp {  }
 /* NameClass */ .chroma .nc { color: #a6e22e }
 /* NameConstant */ .chroma .no { color: #66d9ef }
